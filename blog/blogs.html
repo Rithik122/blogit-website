@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogit - Blogs</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <h1>Blogit</h1>
+        <button onclick="goToDashboard()">Dashboard</button>
+    </nav>
+
+    <div class="container">
+        <h2>Recent Blogs</h2>
+        <div id="blogPosts"></div>
+    </div>
+    <div id="blogContainer"></div> <!-- Blog posts will be loaded here -->
+
+
+    <script type="module" src="firebase-config.js"></script>
+    <script type="module" src="blogs.js"></script>
+    <script type="module" src="likes.js"></script>
+
+    <script>
+        function goToDashboard() {
+            window.location.href = "dashboard.html";
+        }
+    </script>
+    <script src="darkmode.js"></script>
+    <button class="like-btn" data-id="POST_ID">❤️ 0 Likes</button>
+
+
+
+</body>
+</html>

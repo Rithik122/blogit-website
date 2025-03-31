@@ -1,0 +1,193 @@
+/* 🎨 General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    color: #333;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    position: relative;
+}
+
+/* 🔥 Cool Animated Background */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fad0c4, #ffdde1);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    z-index: -1;
+}
+
+/* 🎭 Dark Mode */
+body.darkmode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* 🔘 Dark Mode Toggle */
+#darkModeToggle {
+    position: fixed;
+    top: 15px;
+    right: 20px;
+    z-index: 9999;
+    padding: 12px;
+    background: #333;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+#darkModeToggle:hover {
+    background: #555;
+    transform: scale(1.1);
+}
+
+/* 🏠 Navbar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #007bff;
+    color: white;
+    padding: 15px 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+nav h1 {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+/* 🛠 Dashboard Fix */
+#dashboard {
+    display: block;
+    position: relative;
+    z-index: 900;
+    margin: 80px auto 20px auto;
+    padding: 20px;
+    max-width: 1200px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* ✏️ Blog Post Styles */
+.post {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.post:hover {
+    transform: scale(1.03);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* 🖼 Blog Post Image */
+.post-image {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+/* 🔘 Buttons */
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    margin: 5px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* ❌ Logout Button */
+#logoutButton {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99999;
+    background-color: red;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.3s;
+}
+
+#logoutButton:hover {
+    background-color: darkred;
+    transform: scale(1.1);
+}
+
+/* 🌟 Welcome Page */
+.welcome-container {
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.brand {
+    font-size: 40px;
+    font-weight: bold;
+    color: #007bff;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* ✨ Animated Books */
+.animated-books {
+    width: 120px;
+    margin: 20px auto;
+    animation: floatBooks 4s infinite alternate ease-in-out;
+}
+
+@keyframes floatBooks {
+    0% { transform: translateY(0px); }
+    100% { transform: translateY(-10px); }
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #logoutButton {
+        bottom: 60px;
+    }
+
+    .container {
+        padding: 10px;
+    }
+}
